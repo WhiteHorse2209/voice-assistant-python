@@ -1,180 +1,144 @@
-# \# 🎙️ Nova — Offline AI Voice Assistant
 
-# 
 
-# Nova is a fully offline AI-powered voice assistant built with Python.
+````markdown
+# 🎙️ Nova — Offline AI Voice Assistant
 
-# It listens to your voice, understands any command intelligently using
+Nova is a fully offline AI voice assistant built with Python. It listens to your voice, understands natural language using a local AI model, and responds out loud — without requiring an internet connection.
 
-# a local AI model, and responds out loud — no internet required!
+---
 
-# 
+## 🚀 Why This Project
 
-# \---
+Most voice assistants rely on cloud APIs, which leads to:
+- Privacy concerns  
+- Internet dependency  
+- Slower response times  
 
-# 
+Nova runs completely offline using local models, making it faster, private, and reliable.
 
-# \## ✨ Features
+---
 
-# 
+## ✨ Features
 
-# \- 🎙️ \*\*Always listening\*\* — no wake word needed, just speak naturally
+- 🎙️ Always listening — no wake word required  
+- 🤖 Offline AI brain using TinyLlama  
+- 🔊 Voice response using text-to-speech  
+- 🌐 Opens websites (YouTube, Google, GitHub)  
+- 💻 Opens applications (Notepad, Calculator)  
+- 🕐 Provides time and date  
+- 📖 Explains words and concepts  
+- 😄 Answers general questions  
 
-# \- 🤖 \*\*Offline AI brain\*\* — powered by TinyLlama running locally via Ollama
+---
 
-# \- 🔊 \*\*Speaks back\*\* — responds out loud using text-to-speech
+## 🏗️ How It Works
 
-# \- 🌐 \*\*Opens websites\*\* — YouTube, Google, GitHub by voice
+Voice Input → SpeechRecognition → TinyLlama (via Ollama) → pyttsx3 → Voice Output
 
-# \- 💻 \*\*Opens apps\*\* — Notepad, Calculator by voice
+---
 
-# \- 🕐 \*\*Time \& Date\*\* — tells current time and date on request
+## 🛠️ Tech Stack
 
-# \- 📖 \*\*Word meanings\*\* — explains any word or concept intelligently
+| Tool | Purpose |
+|------|--------|
+| Python 3.9 | Core programming |
+| SpeechRecognition | Voice to text |
+| pyttsx3 | Text to speech |
+| Ollama | Run local AI model |
+| TinyLlama | Language model |
+| webbrowser | Open websites |
+| datetime | Time and date |
 
-# \- 😄 \*\*General questions\*\* — answers anything you ask smartly
+---
 
-# 
+## ⚙️ Installation
 
-# \---
+### 1. Clone the Repository
+```bash
+git clone https://github.com/WhiteHorse2209/voice-assistant-python.git
+cd voice-assistant-python
+````
 
-# 
+### 2. Install Dependencies
 
-# \## 🛠️ Tech Stack
+```bash
+pip install -r requirements.txt
+```
 
-# 
+### 3. Install Ollama
 
-# | Tool | Purpose |
+Download from: [https://ollama.com](https://ollama.com)
 
-# |---|---|
+### 4. Download TinyLlama Model
 
-# | Python 3.9 | Core programming language |
+```bash
+ollama run tinyllama
+```
 
-# | SpeechRecognition | Converts voice to text |
+(Wait for download, then press Ctrl + D)
 
-# | pyttsx3 | Text to speech (offline) |
+### 5. Run the Assistant
 
-# | Ollama + TinyLlama | Offline AI brain |
+```bash
+python assistant.py
+```
 
-# | webbrowser | Opens websites |
+---
 
-# | datetime | Time and date handling |
+## 🗣️ Usage
 
-# 
+Just run the assistant and speak naturally.
 
-# \---
+### Example Commands:
 
-# 
+* "What time is it?"
+* "Open YouTube"
+* "Explain artificial intelligence"
+* "Open calculator"
+* "Tell me a joke"
+* "Goodbye"
 
-# \## ⚙️ Installation \& Setup
+---
 
-# 
+## 📂 Project Structure
 
-# \### 1. Clone the repository
+```
+voice-assistant-python/
+├── assistant.py
+├── requirements.txt
+└── README.md
+```
 
-# ```bash
+---
 
-# git clone https://github.com/WhiteHorse2209/voice-assistant-python.git
+## ⚠️ Limitations
 
-# cd voice-assistant-python
+* Accuracy depends on TinyLlama (not as powerful as cloud AI)
+* No wake word may cause unintended activation
+* Continuous listening may use more CPU
+* Limited system-level controls
 
-# ```
+---
 
-# 
+## 🔧 Improvements You Can Add
 
-# \### 2. Install Python libraries
+* Add wake word detection (Porcupine / Snowboy)
+* Add GUI for better interaction
+* Add memory for conversations
+* Add custom commands or plugins
 
-# ```bash
+---
 
-# pip install -r requirements.txt
+## 📈 Future Scope
 
-# ```
+* Wake-word activation
+* Context-aware responses
+* More app integrations
+* Better local AI models
 
-# 
+---
 
-# \### 3. Install Ollama
+## 👨‍💻 Author
 
-# Download and install Ollama from: https://ollama.com
-
-# 
-
-# \### 4. Download TinyLlama model
-
-# ```bash
-
-# ollama run tinyllama
-
-# ```
-
-# Wait for it to download, then press Ctrl+D to exit.
-
-# 
-
-# \### 5. Run Nova
-
-# ```bash
-
-# python assistant.py
-
-# ```
-
-# 
-
-# \---
-
-# 
-
-# \## 🗣️ How to Use
-
-# 
-
-# Just run the assistant and speak naturally! Examples:
-
-# 
-
-# \- "What time is it?"
-
-# \- "Open YouTube"
-
-# \- "What is the meaning of perseverance?"
-
-# \- "Explain quantum physics simply"
-
-# \- "Open calculator"
-
-# \- "Tell me a joke"
-
-# \- "Goodbye" — to exit
-
-# 
-
-# \---
-
-# 
-
-# \## 📁 Project Structure
-
-# ```
-
-# voice-assistant-python/
-
-# ├── assistant.py       → main voice assistant code
-
-# ├── requirements.txt   → required Python libraries
-
-# └── README.md          → project documentation
-
-# ```
-
-# 
-
-# \---
-
-# 
-
-# \## 👨‍💻 Author
-
-# 
-
-# \*\*WhiteHorse2209\*\* — \[GitHub Profile](https://github.com/WhiteHorse2209)
-
+WhiteHorse2209
+[https://github.com/WhiteHorse2209](https://github.com/WhiteHorse2209)
